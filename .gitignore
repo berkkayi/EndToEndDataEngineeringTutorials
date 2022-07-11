@@ -1,3 +1,4 @@
-dataset/
+dataset/raw_data
 .env
 de_env
+.DS_Store
