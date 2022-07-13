@@ -4,3 +4,8 @@ wget
 requests
 beautifulsoup4
 psycopg2-binary
+pandas
+pyarrow
+fastparquet
+sqlalchemy
+sqlalchemy-redshift
