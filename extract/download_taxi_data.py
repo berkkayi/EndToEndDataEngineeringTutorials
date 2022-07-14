@@ -1,9 +1,12 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import wget 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 URL = "https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
-data_path = "/Users/berkkayi/Desktop/aws_data_engineering_masterclass/dataset/raw_data"
+
 
 # html parsing for target URL
 r= requests.get(URL)
@@ -20,7 +23,7 @@ for li in soup.find_all("li"):
             filename = link.split("/")[-1]
             try:
                 #downloading data from link to output path.
-                wget.download(link,out=data_path + "/" + filename)
+                wget.download(link,out=os.getenv("RAW_DATA_PATH") + "/" + filename)
                 print("downloading data",filename)
             except: 
                 #some data is not avaliable for past data, I passed these datas.
