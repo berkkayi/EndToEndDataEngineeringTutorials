@@ -26,3 +26,13 @@ Airflow installation:
 - docker-compose up 
 
 airflow webserver--> localhost:8080  (user=airflow,pwd=airflow)
+
+
+example initial db load :
+- python3 ingest.py --user=root\
+ --password=root \
+ --host=localhost \
+ --port=5432 \
+ --db=ny_taxi \
+ --table_name=yellow_taxi_trips \
+ --url=https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet
